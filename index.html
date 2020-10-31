@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Vim Cheatsheet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <article class="container">
+      <h1>Vim Cheatsheet</h1>
+      <section>
+        <h2>Insert Text</h2>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>i</kbd></span>
+            <span class=list-discription>Insert before the cursor</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>I</kbd></span>
+            <span class=list-discription>Insert at the beginning of the line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>a</kbd></span>
+            <span class=list-discription>Append after the cursor</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>A</kbd></span>
+            <span class=list-discription>Append at the end of the line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>o</kbd></span>
+            <span class=list-discription>Open a new line below the current line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>O</kbd></span>
+            <span class=list-discription>Open a new line above the current line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Esc</kbd></span>
+            <span class=list-discription>Exit insert mode</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Vim Navigation</h2>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>k</kbd></span>
+            <span class=list-discription>Move backward one line or <kbd>nk</kbd> to jump backward 'n' line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>j</kbd></span>
+            <span class=list-discription>Move forward one line or <kbd>nj</kbd> to jump forward 'n' line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>l</kbd></span>
+            <span class=list-discription>Move right side or <kbd>nl</kbd> to jump right 'n' columns</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>h</kbd></span>
+            <span class=list-discription>Move left side or <kbd>nh</kbd> to jump left 'n' columns</span>
+          </li>
+        </ul>
+        <h3>Words</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>e</kbd></span>
+            <span class=list-discription>Move to the end of a word</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>E</kbd></span>
+            <span class=list-discription>Move to the end of the WORD (any non-whitespace characters)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>b</kbd></span>
+            <span class=list-discription>Move backward to the beginning of a word</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>B</kbd></span>
+            <span class=list-discription>Move backward to the beginning of WORD (any non-whitespace characters)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>w</kbd></span>
+            <span class=list-discription>Move forward to beginning of next word</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>W</kbd></span>
+            <span class=list-discription>Move forward to beginning of the next WORD (any non-whitespace characters)</span>
+          </li>
+        </ul>
+        <h3>Line</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>0</kbd></span>
+            <span class=list-discription>Move to the beginning of the line or at first column</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>^</kbd></span>
+            <span class=list-discription>Move to the first non-blank character of the line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>$</kbd></span>
+            <span class=list-discription>Move to the end of the line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>g_</kbd></span>
+            <span class=list-discription>Move to the last non-blank character of the line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>+</kbd></span>
+            <span class=list-discription>Move to the first non-blank character at next line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>fx</kbd></span>
+            <span class=list-discription>Move to next occurrence of character x in line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>tx</kbd></span>
+            <span class=list-discription>Move to before next occurrence of character x in line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Fx</kbd></span>
+            <span class=list-discription>Move to previous occurrence of character x in line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Tx</kbd></span>
+            <span class=list-discription>Move to after previous occurrence of character x in line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>;</kbd></span>
+            <span class=list-discription>Repeat previous <kbd>f</kbd>, <kbd>t</kbd>, <kbd>F</kbd> or <kbd>T</kbd> movement</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>,</kbd></span>
+            <span class=list-discription>Repeat previous <kbd>f</kbd>, <kbd>t</kbd>, <kbd>F</kbd> or <kbd>T</kbd> movement, backward</span>
+          </li>
+        </ul>
+        <h3>Page</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>zz</kbd></span>
+            <span class=list-discription>Move current line to the center of screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>zt</kbd></span>
+            <span class=list-discription>Move current line to the top of screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>zb</kbd></span>
+            <span class=list-discription>Move current line to the end of screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+f</kbd></span>
+            <span class=list-discription>Move forward one full screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+b</kbd></span>
+            <span class=list-discription>Move backward one full screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+d</kbd></span>
+            <span class=list-discription>Move forward (down) a half screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+u</kbd></span>
+            <span class=list-discription>Move back (up) one half screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+e</kbd></span>
+            <span class=list-discription>Move viewport up by single line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+y</kbd></span>
+            <span class=list-discription>Move viewport down by single line</span>
+          </li>
+        </ul>
+      </section>
+      <div class="page-break"></div>
+      <section>
+        <h2>Editing</h2>
+        <h3>Operator/Actions</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>c</kbd></span>
+            <span class=list-discription>Change</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>y</kbd></span>
+            <span class=list-discription>Yank(Copy)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>d</kbd></span>
+            <span class=list-discription>Delete</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>p</kbd></span>
+            <span class=list-discription>Put (paste) the clipboard after cursor</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>=</kbd></span>
+            <span class=list-discription>Format</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>&gt;</kbd></span>
+            <span class=list-discription>Add Indent</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>&lt;</kbd></span>
+            <span class=list-discription>Remove Indent</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>v</kbd></span>
+            <span class=list-discription>Visually select</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>gn</kbd></span>
+            <span class=list-discription>Start visual mode and select next match</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>gN</kbd></span>
+            <span class=list-discription>Start visual mode and select previous match</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+v</kbd></span>
+            <span class=list-discription>Visually select column</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>zf</kbd></span>
+            <span class=list-discription>Define fold</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>g~</kbd></span>
+            <span class=list-discription>Togglecase</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>gu</kbd></span>
+            <span class=list-discription>Make Lowercase</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>gU</kbd></span>
+            <span class=list-discription>Make Uppercase</span>
+          </li>
+        </ul>
+        <h3>Text Objects/Motion</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>w</kbd></span>
+            <span class=list-discription>Word (<kbd>W</kbd> for WORD delimited by white space)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>s</kbd></span>
+            <span class=list-discription>Sentence</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>p</kbd></span>
+            <span class=list-discription>Paragraph</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>t</kbd></span>
+            <span class=list-discription>Tag</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>%</kbd></span>
+            <span class=list-discription>Code block</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>(</kbd></span>
+            <span class=list-discription>Block surrounded by () (same as <kbd>)</kbd> or <kbd>b</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>{</kbd></span>
+            <span class=list-discription>Block surrounded by {} (same as <kbd>}</kbd> or <kbd>B</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>[</kbd></span>
+            <span class=list-discription>Block surrounded by [] (same as <kbd>]</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>&lt;</kbd></span>
+            <span class=list-discription>Block surrounded by &lt;&gt; (same as <kbd>&gt;</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>'</kbd></span>
+            <span class=list-discription>Surrounded by single quotes</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>"</kbd></span>
+            <span class=list-discription>Surrounded by double quotes</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>`</kbd></span>
+            <span class=list-discription>Surrounded by back tick</span>
+          </li>
+        </ul>
+        <h3>Modifiers</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>i</kbd></span>
+            <span class=list-discription>Inner</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>a</kbd></span>
+            <span class=list-discription>Around</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>NUM</kbd></span>
+            <span class=list-discription>Number (e.g.: 1, 2, 28)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>t</kbd></span>
+            <span class=list-discription>Till forward (Search forward for character and stops before it)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>T</kbd></span>
+            <span class=list-discription>Till backward (Search backward for character and stops before it)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>f</kbd></span>
+            <span class=list-discription>Find forward (Search forward for character and lands on it</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>F</kbd></span>
+            <span class=list-discription>Find backward (Search backward for character and lands on it)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>/</kbd></span>
+            <span class=list-discription>Find</span>
+          </li>
+        </ul>
+        <h3>Example of performing an action in a target</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>dw</kbd></span>
+            <span class=list-discription>Delete word</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>ciw</kbd></span>
+            <span class=list-discription>Change in word</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>viw</kbd></span>
+            <span class=list-discription>Visually select word</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>yas</kbd></span>
+            <span class=list-discription>Yank a sentence</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>c2iw</kbd></span>
+            <span class=list-discription>Change two words</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>dta</kbd></span>
+            <span class=list-discription>Delete till character 'a'</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>dTa</kbd></span>
+            <span class=list-discription>Delete till character 'a' backward</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>ci"</kbd></span>
+            <span class=list-discription>Change inside double quotes</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>yit</kbd></span>
+            <span class=list-discription>Yank in XML/HTML tag</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>cit</kbd></span>
+            <span class=list-discription>Change in tag</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>dat</kbd></span>
+            <span class=list-discription>Delete a XML/HTML tag</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>=it</kbd></span>
+            <span class=list-discription>Format in XML/HTML tag</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>da%</kbd></span>
+            <span class=list-discription>Delete a code block</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>y10k</kbd></span>
+            <span class=list-discription>Yank 10 lines up</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>cgn</kbd></span>
+            <span class=list-discription>Change next match</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>gUgn</kbd></span>
+            <span class=list-discription>Make next match uppercase</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>c/foo</kbd></span>
+            <span class=list-discription>Change till 'foo'</span>
+          </li>
+        </ul>
+        <h3>Action can be perform with vim navigation as well</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>d2j</kbd></span>
+            <span class=list-discription>Delete 2 line down</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>dG</kbd></span>
+            <span class=list-discription>Delete till end of the file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>dgg</kbd></span>
+            <span class=list-discription>Delete till beginning of the file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>d Ctrl+v 2j</kbd></span>
+            <span class=list-discription>Delete character 2 line down in current column</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>c)</kbd></span>
+            <span class=list-discription>Change sentence</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>&gt;}</kbd></span>
+            <span class=list-discription>Add indent a paragraph</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>d$</kbd></span>
+            <span class=list-discription>Delete till end of the line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>d0</kbd></span>
+            <span class=list-discription>Delete till beginning of the line</span>
+          </li>
+        </ul>
+        <h3>Other useful commands</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>.</kbd></span>
+            <span class=list-discription>Repeat last command</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>u</kbd></span>
+            <span class=list-discription>Undo</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+r</kbd></span>
+            <span class=list-discription>Redo</span>
+          </li>
+        </ul>
+        <div class="page-break"></div>
+        <h3>Shorthand syntax</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>x</kbd></span>
+            <span class=list-discription>Deletes the character under the cursor (same as <kbd>dl</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>X</kbd></span>
+            <span class=list-discription>Deletes the character before the cursor (same as <kbd>dh</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>s</kbd></span>
+            <span class=list-discription>Substitute text, Delete character and switch to insert mode (same as <kbd>ch</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>S</kbd></span>
+            <span class=list-discription>Substitute line (same as <kbd>cc</kbd></span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>~</kbd></span>
+            <span class=list-discription>Switch case of character</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>r</kbd></span>
+            <span class=list-discription>Replace single character</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>J</kbd></span>
+            <span class=list-discription>Join line below to the current one with one space in between</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>gJ</kbd></span>
+            <span class=list-discription>Join line below to the current one without space in between</span>
+          </li>
+        </ul>
+        <h3>Double an operator to apply operation on a whole line</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>dd</kbd></span>
+            <span class=list-discription>Deletes a whole line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>cc</kbd></span>
+            <span class=list-discription>Change a whole line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>yy</kbd></span>
+            <span class=list-discription>Yank (copy) a line (same as <kbd>Y</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>&gt;&gt;</kbd></span>
+            <span class=list-discription>Indent line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>&lt;&lt;</kbd></span>
+            <span class=list-discription>Remove indent from line</span>
+          </li>
+        </ul>
+        <h3>Capitalize an operator to have it perform a stronger (or alternate) version of its default behavior</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>C</kbd></span>
+            <span class=list-discription>Change from the cursor to the end of a line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Y</kbd></span>
+            <span class=list-discription>Copies a complete line (same as <kbd>yy</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>D</kbd></span>
+            <span class=list-discription>Deletes from the cursor to the end of the line</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>P</kbd></span>
+            <span class=list-discription>Put (paste) before cursor</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>V</kbd></span>
+            <span class=list-discription>Visually select line</span>
+          </li>
+        </ul>
+      </section>
+      <div class="page-break"></div>
+      <section>
+        <h2>Working with multiple files</h2>
+        <h3>Buffers</h3>
+        <ul class="list-col-2">
+          <li>
+            <span class="list-title"><kbd>:e[dit] file</kbd></span>
+            <span class=list-discription>Open a new buffer for file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:ls</kbd></span>
+            <span class=list-discription>List all open buffers, work same as
+              <kbd>:buffers</kbd></span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:bn[ext]</kbd></span>
+            <span class=list-discription>Go to next buffer</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:bp[revious]</kbd></span>
+            <span class=list-discription>Go to previous buffer</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+^</kbd></span>
+            <span class=list-discription>Switch between alternate buffers, you
+              can also use <kbd>:b#</kbd></span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:bd[elete]</kbd></span>
+            <span class=list-discription>Delete buffer (Make the buffer
+              invisible, but leaves it in memory)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:bd[elete] n/name</kbd></span>
+            <span class=list-discription>Delete buffer(s) with matching name
+              or number. You can use more then one name or number separate
+            with space</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:bw[ipeout]</kbd></span>
+            <span class=list-discription>Wipeout buffer from memory</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:bw[ipeout] n/name</kbd></span>
+            <span class=list-discription>Wipeout buffer(s) with matchine name or
+            number. You can use more then one name or number separate with space</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>%bw[ipeout]</kbd></span>
+            <span class=list-discription>Wipeout all buffer</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:b[uffer] n/name</kbd></span>
+            <span class=list-discription>Open buffer with a number or name</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:sb[uffer] n/name</kbd></span>
+            <span class=list-discription>Open buffer with name or number in
+              horizontally split window</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:vert sb[uffer] n/name</kbd></span>
+            <span class=list-discription>Open buffer with name or number in
+              vertically split window</span>
+          </li>
+        </ul>
+        <h3>Window</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>:q[uit]</kbd></span>
+            <span class=list-discription>Quit window</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:q[uit]!</kbd></span>
+            <span class=list-discription>Quit window and through away unsaved
+              changes</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:w[rite]</kbd></span>
+            <span class=list-discription>Write (save) the file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:wq</kbd></span>
+            <span class=list-discription>Write (save) changes and quit</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:wa</kbd></span>
+            <span class=list-discription>Write (save) on all windows</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:qa</kbd></span>
+            <span class=list-discription>Quit all windows</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:wqa</kbd></span>
+            <span class=list-discription>Write (save) and quit all windows</span>
+          </li>
+        </ul>
+        <h3>Split window</h3>
+        <p class="disclaimer">You can open horizontally or vertically split
+          window using <kbd>:sp[lit]</kbd> and <kbd>:vs[plit]</kbd> command respectively. By default,
+          they duplicate the current buffer, you can also specify file using
+          <kbd>:sp</kbd> file-path or <kbd>:vs</kbd> file-path. New split window height and width also
+        can be specified <kbd>:10vs</kbd> or <kbd>:10sp</kbd> respectively.</p>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>Ctrl+w n</kbd></span>
+            <span class=list-discription>Open new horizontal split (same as
+              <kbd>:new</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w s</kbd></span>
+            <span class=list-discription>Split window horizontally (same as
+              <kbd>:sp[lit]</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w v</kbd></span>
+            <span class=list-discription>Split window vertically (same as
+              <kbd>:vs[plit]</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w c</kbd></span>
+            <span class=list-discription>Close current window (same as
+              <kbd>:close</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w o</kbd></span>
+            <span class=list-discription>Close all split window but current
+              (same as <kbd>:on[ly]</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w w</kbd></span>
+            <span class=list-discription>Cycle between the open windows</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w h</kbd></span>
+            <span class=list-discription>Move cursor to the left window (vertical split)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w l</kbd></span>
+            <span class=list-discription>Move cursor to the right window
+              (vertical split)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w j</kbd></span>
+            <span class=list-discription>Move cursor to the window below
+              (horizontal split)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w k</kbd></span>
+            <span class=list-discription>Move cursor to the window above
+              (horizontal split)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w |</kbd></span>
+            <span class=list-discription>Maximize vertically split window or
+              <kbd>Ctrl+w 10|</kbd> to make it 10 columns wide</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w _</kbd></span>
+            <span class=list-discription>Maximize horizontally split window or
+              <kbd>Ctrl+w 10_</kbd> to make it 10 row long</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w &gt;</kbd></span>
+            <span class=list-discription>Scale vertically split window or
+              <kbd>Ctrl+w 10&gt;</kbd> to scale 10 columns</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w &lt;</kbd></span>
+            <span class=list-discription>Scale down vertically split window or
+              <kbd>Ctrl+w 10&lt;</kbd> to scale down 10 columns</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w +</kbd></span>
+            <span class=list-discription>Scale horizontally split window or
+              <kbd>Ctrl+w 10+</kbd> to scale 10 rows</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w -</kbd></span>
+            <span class=list-discription>Scale down horizontally split window or
+              <kbd>Ctrl+w 10-</kbd> to scale down 10 rows</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w =</kbd></span>
+            <span class=list-discription>Resize/Normalize all split window</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w T</kbd></span>
+            <span class=list-discription>Open current window into a new tab</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w r</kbd></span>
+            <span class=list-discription>Reverse/Swap split windows</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w x</kbd></span>
+            <span class=list-discription>Exchange current window with neighbour</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w H</kbd></span>
+            <span class=list-discription>Move current window to far left</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w J</kbd></span>
+            <span class=list-discription>Move current window to bottom</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w K</kbd></span>
+            <span class=list-discription>Move current window to top</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>Ctrl+w L</kbd></span>
+            <span class=list-discription>Move current window to far right</span>
+          </li>
+        </ul>
+        <h3>Tabs</h3>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>:tabnew</kbd></span>
+            <span class=list-discription>Open new tab</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:tabnew file</kbd></span>
+            <span class=list-discription>Open file in a new tab</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:tabs</kbd></span>
+            <span class=list-discription>List all tabs including their displayed windows</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>gt</kbd></span>
+            <span class=list-discription>Go to the next tab (same as <kbd>:tabn[ext]</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>gT</kbd></span>
+            <span class=list-discription>Go to the previous tab (same as <kbd>:tabp[rev]</kbd>)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:tabfirst</kbd></span>
+            <span class=list-discription>Go to the first tab</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:tablast</kbd></span>
+            <span class=list-discription>Go to the last tab</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>ngt</kbd></span>
+            <span class=list-discription>Go to tab <kbd>n</kbd> number tab</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:tabmove n</kbd></span>
+            <span class=list-discription>Move current tab to the <kbd>nth</kbd> position (indexed from 0)</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:tabc[lose]</kbd></span>
+            <span class=list-discription>Close the current tab and all its windows</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:tabo[nly]</kbd></span>
+            <span class=list-discription>Close all tabs but the current one</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Changelist</h2>
+        <p class="disclaimer">The Changelist remembers the position of every change that can be undone. You can move back and forwards through the Changelist using the commands.</p>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>g;</kbd></span>
+            <span class=list-discription>Move backward in change list</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>g,</kbd></span>
+            <span class=list-discription>Move forward in change list</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:changes</kbd></span>
+            <span class=list-discription>View the contents of the Changelist</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Jumplist</h2>
+        <p class="disclaimer">Vim remembers the locations you have recently visited (where you jumped from). Each position (file name, column number, line number) is recorded in a jump list, and each window has a separate jump list that records the last 100 positions where a jump occurred.</p>
+        <ul class="list-col-3">
+          <li>
+            <span class="list-title"><kbd>%</kbd></span>
+            <span class=list-discription>Jump to the matching braces or parenthesis.</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>{</kbd></span>
+            <span class=list-discription>Jump backward one paragraph.</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>}</kbd></span>
+            <span class=list-discription>Jump forward one paragraph.</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>(</kbd></span>
+            <span class=list-discription>Jump backward one sentence.</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>)</kbd></span>
+            <span class=list-discription>Jump forward one sentence.</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>n%</kbd></span>
+            <span class=list-discription>Jump to the nth percentage line of the file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>nG</kbd></span>
+            <span class=list-discription>Jump to the nth line of the file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>G</kbd></span>
+            <span class=list-discription>Jump to the end of the file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>gg</kbd></span>
+            <span class=list-discription>Jump to the beginning of the file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>H</kbd></span>
+            <span class=list-discription>Jump to the top (high) of the screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>M</kbd></span>
+            <span class=list-discription>Jump to the middle (medium) of the screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>L</kbd></span>
+            <span class=list-discription>Jump to the bottom (low) of the screen</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>`”</kbd></span>
+            <span class=list-discription>Jump to the position where you were in NORMAL MODE while last closing the file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>`^</kbd></span>
+            <span class=list-discription>Jump to the position where you were in INSERT MODE while last closing the file</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>ctrl-o</kbd></span>
+            <span class=list-discription>Jump backward in jump list</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>ctrl-i</kbd></span>
+            <span class=list-discription>Jump forward in jump list</span>
+          </li>
+          <li>
+            <span class="list-title"><kbd>:jumps</kbd></span>
+            <span class=list-discription>View the content of Jumplist</span></li>
+        </ul>
+      </section>
+    </article>
+  </body>
+</html>
+
